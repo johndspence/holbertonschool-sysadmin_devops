@@ -1,0 +1,14 @@
+total 72
+drwxr-xr-x  13 johnspence  staff  442 Apr 18 23:48 .
+drwxr-xr-x   5 johnspence  staff  170 Apr 18 15:21 ..
+drwxr-xr-x   3 johnspence  staff  102 Apr 18 23:18 .vagrant
+-rwxr-xr-x   1 johnspence  staff   35 Apr 18 15:48 0-hello_world
+-rwxr-xr-x   1 johnspence  staff   27 Apr 18 23:44 1-confused_smiley
+-rwxr-xr-x   1 johnspence  staff   27 Apr 18 22:06 2-hellofile
+-rwxr-xr-x   1 johnspence  staff   42 Apr 18 22:59 3-twofiles
+-rwxr-xr-x   1 johnspence  staff   28 Apr 18 23:00 4-lastlines
+-rwxr-xr-x   1 johnspence  staff   28 Apr 18 23:09 5-firstlines
+-rwxr-xr-x   1 johnspence  staff   36 Apr 18 23:31 6-third_line
+-rwxr-xr-x   1 johnspence  staff   35 Apr 18 23:41 8-cwd_state
+-rw-r--r--   1 johnspence  staff  800 Apr 18 23:16 iacta
+-rw-r--r--   1 johnspence  staff    0 Apr 18 23:48 ls_cwd_content
