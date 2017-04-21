@@ -1,107 +1,103 @@
-0. 
-Write a script that prints “Hello, World”, followed by a new line to the standard output.
-echo -e "Hello, World"
+https://intranet.hbtn.io/projects/209
+
+0.
+Create a script that creates an alias.
+
+Name: ls
+Value: rm *
+
+alias ls='rm *'
 
 1.
-Write a script that displays a confused smiley "(Ôo)'.
-echo "\"(Ôo)'"
+Create a script that prints hello user, where user is the current Linux user.
+
+echo hello $USER
 
 2.
-Display the content of the /etc/passwd file.
-cat /etc/passwd
+Add /action to the PATH. /action should be the last directory the shell looks into when looking for a program.
+
+PATH="$PATH:/action"
 
 3.
-Display the content of /etc/passwd and /etc/hosts
-cat /etc/passwd /etc/hosts
+Create a script that counts the number of directories in the PATH.
+
+echo $PATH | tr ':' '\n' | wc -l | tr -d [:blank:]
 
 4.
-Display the last 10 lines of /etc/passwd
-tail /etc/passwd
+Create a script that lists environment variables.
+
+printenv
 
 5.
-Display the first 10 lines of /etc/passwd
-head /etc/passwd
+Create a script that lists all local variables and environment variables, and functions.
+
+set
 
 6.
-Write a script that displays the third line of the file iacta.
-head -n3 iacta | tail -1
+Create a script that creates a new local variable.
+
+Name: BETTY
+Value: Holberton
+
+BETTY="Holberton"
 
 7.
-Write a script that writes into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it should be overwritten. If the file ls_cwd_content does not exist, create it.
-ls -la > ls_cwd_content
+Create a script that creates a new global variable.
+
+Name: HOLBERTON
+Value: Betty
+
+export HOLBERTON=Betty
 
 8.
-Write a shell script that creates a file named exactly \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:) containing the text Holberton School ending by a new line.
-echo 'Holberton School' > '\*\\'\''"Holberton School"\'\''\\*$\?\*\*\*\*\*:)'
+
+Write a script that prints the result of the addition of 128 with the value stored in the environment variable TRUEKNOWLEDGE, followed by a new line.
+
+echo $(($TRUEKNOWLEDGE + 128))
 
 9.
-Write a script that duplicates the last line of the file iacta
-tail -n1 iacta >> iacta
+
+Write a script that prints the result of POWER divided by DIVIDE, followed by a new line.
+
+POWER and DIVIDE are environment variables
+
+echo $(($POWER/$DIVIDE))
 
 10.
-Write a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
-find . -type f -name '*.js' -delete
+Write a script that displays the result of BREATH to the power LOVE
+
+BREATH and LOVE are environment variables
+The script should display the result, followed by a new line
+
+echo $(($BREATH**$LOVE))
 
 11.
-Write a script that counts the number of directories and sub-directories in the current directory.
+Write a script that converts a number from base 2 to base 10.
 
-The current and parent directories should not be taken into account
-Hidden directories should be counted
-find . -type d -mindepth 1 | wc -l
+echo $((2#$BINARY))
 
 12.
-Create a script that displays the 10 newest files in the current directory.
+Create a script that prints all possible combinations of two letters, except oo.
 
-Requirements:
+Letters are lower cases, from a to z
+One combinaison per line
+The output should be alpha ordered, starting with aa
+Do not print oo
+Your script file should contain maximum 64 characters
 
-One file per line
-Sorted from the newest to the oldest
-ls -t | head -n10
+echo {a..z}{a..z} | tr ' ' '\n' | grep -v 'oo'
 
 13.
-Create a scripts that takes a list of words as input and prints only words that appear exactly once.
+Write a script that prints a number with two decimal places.
 
-Input format: One line, one word
-Output format: One line, one word
-Words should be sorted
-sort | uniq -u
+The number will be stored in the environment variable NUM.
+
+printf  "%0.2f\n" $NUM
 
 14.
-Display lines containing the pattern "root" from the file /etc/passwd
-grep root /etc/passwd
+Write a script that converts a number from base 10 to base 16.
 
-15.
-Display the number of lines that contain the pattern "bin" in the file /etc/passwd
-grep -c bin /etc/passwd
+The number in base 10 is stored in the environment variable DECIMAL
+The script should display the number in base 16, followed by a new line
 
-16.
-Display lines containing the pattern "root" and 3 lines after them in the file /etc/passwd.
-grep -A3 "root" /etc/passwd
-
-17.
-Display all the lines in the file /etc/passwd that do not contain the pattern "bin".
-grep -v "bin" /etc/passwd
-
-18.
-Display all lines of the file /etc/ssh/sshd_config starting with a letter.
-
-include capital letters as well
-grep ^[a-zA-Z] /etc/ssh/sshd_config
-
-19.
-Replace all characters A and c from input to Z and e respectively.
-tr [Ac] [Ze]
-
-20.
-Create a script that removes all letters c and C from input.
-tr -d cC
-
-21.
-Write a script that reverse its input.
-rev
-
-22.
-Write a script that displays all users and their home directories, sorted by users.
-cat /etc/passwd | cut -f1,6 -d ':' | sort
-
-https://intranet.hbtn.io/projects/208
+printf "%x\n" $DECIMAL
